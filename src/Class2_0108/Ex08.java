@@ -32,12 +32,9 @@ public class Ex08 {
     }
 
     int compute(int n, int c) {
-        if (n == 1) {
-            return c;
-        }
-        if (c == 1) {
-            return c + compute(n -1, c);
-        }
+        if (n == 1) return c;
+        if (c == 1) return c + compute(n -1, c);
+
         return c + compute(n - 1, c - 1);
     }
 }

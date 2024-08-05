@@ -46,15 +46,9 @@ public class Ex09 {
         int idosos = 0;
 
         for (int idade : input) {
-            if (idade < 0) {
-                break;
-            }
-            if (idade >= 18) {
-                deMaior++;
-            }
-            if (idade > 75) {
-                idosos++;
-            }
+            if (idade < 0) break;
+            if (idade >= 18) deMaior++;
+            if (idade > 75) idosos++;
             somaIdades += idade;
         }
 
