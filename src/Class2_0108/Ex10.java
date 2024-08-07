@@ -1,4 +1,4 @@
-package br.edu.ifsp.list01;
+package Class2_0108;
 
 import java.util.Scanner;
 

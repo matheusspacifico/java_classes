@@ -1,4 +1,4 @@
-package br.edu.ifsp.list01;
+package Class2_0108;
 
 /*
     Uma livraria está fazendo uma promoção para pagamento a vista. O comprador pode escolher entre dois planos de pagamento:

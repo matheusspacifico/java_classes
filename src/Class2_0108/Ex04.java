@@ -1,4 +1,4 @@
-package br.edu.ifsp.list01;
+package Class2_0108;
 
 /*
     Osmar adora chocolates e vai para a loja com N dinheiro no bolso. O preço de cada chocolate é C.

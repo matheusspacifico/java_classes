@@ -1,4 +1,4 @@
-package br.edu.ifsp.list01;
+package Class2_0108;
 
 /*
     Escrever um programa que, dado um ano válido qualquer, verifica se ele é bissexto ou não:
