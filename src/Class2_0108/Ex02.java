@@ -1,4 +1,4 @@
-package br.edu.ifsp.list01;
+package Class2_0108;
 
 /*
     Sejam a, b e c os três lados de um triângulo. Elabore um algoritmo que verifica se o triângulo é:
