@@ -19,7 +19,7 @@ public class Post {
         StringBuilder output = new StringBuilder();
 
         output.append("[").append(date).append("]");
-        output.append(account.getUserName()).append("says ");
+        output.append(account.getUserName()).append(" says ");
         output.append("\"").append(quote).append("\"").append(" | ");
         output.append("Claps: ").append(claps).append(" | ");
         output.append("Boos: ").append(boos).append(".");

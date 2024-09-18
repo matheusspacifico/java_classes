@@ -1,11 +1,11 @@
 package SocialMedia_Challenge;
 
 public class UserAccount {
-    private String email;
-    private String userName;
-    private Post[] timeLine;
-    private Post[] myPosts;
-    private UserAccount[] myFriends;
+    private final String email;
+    private final String userName;
+    private final Post[] timeLine;
+    private final Post[] myPosts;
+    private final UserAccount[] myFriends;
     private int timeLineIdx;
     private int myPostsIdx;
     private int myFriendsIdx;
@@ -39,8 +39,6 @@ public class UserAccount {
             timeLine[timeLineIdx] = newPost;
             timeLineIdx++;
         } else {
-            timeLine[0] = newPost;
-
             for (int i = 1; i < timeLine.length; i++) {
                 timeLine[i - 1] = timeLine[i];
             }
@@ -110,23 +108,82 @@ public class UserAccount {
     }
 
     public void acceptFollower(UserAccount newFollower){
+        if (myFriendsIdx == myFriends.length){
+            System.out.println("Your friend list is full!");
+            return;
+        }
 
+        for (int i = 0; i < myFriendsIdx; i++) {
+            if (myFriends[i] == newFollower){
+                System.out.println("This friend is already on your list!");
+                return;
+            }
+        }
+
+        myFriends[myFriendsIdx] = newFollower;
+        myFriendsIdx++;
     }
 
     public void blockFollower(UserAccount follower){
+        if (myFriendsIdx == 0){
+            System.out.println("There are no followers to block!");
+            return;
+        }
 
+        for (int i = 0; i < myFriendsIdx; i++) {
+            if (myFriends[i] == follower){
+                for (int j = i; j < myFriendsIdx - 1; j++) {
+                    myFriends[j] = myFriends[j + 1];
+                }
+
+                myFriends[myFriendsIdx - 1] = null;
+                myFriendsIdx--;
+                System.out.println("User successfully blocked!");
+                return;
+            }
+        }
     }
 
     public String showTimeline(){
+        StringBuilder output =  new StringBuilder();
 
+        output.append("------------------Time Line--------------------\n");
+
+        for (int i = 0; i < timeLineIdx; i++) {
+            output.append(timeLine[i].show()).append("\n");
+        }
+
+        output.append("--------------------------------------\n");
+
+        return output.toString();
     }
 
     public String showMyPosts(){
+        StringBuilder output =  new StringBuilder();
 
+        output.append("------------------My Posts--------------------\n");
+
+        for (int i = 0; i < myPostsIdx; i++) {
+            output.append(myPosts[i].show()).append("\n");
+        }
+
+        output.append("--------------------------------------\n");
+
+        return output.toString();
     }
 
     public String showMyFriends(){
+        StringBuilder output = new StringBuilder();
 
+        output.append("------------------My Friends--------------------\n");
+
+        for (int i = 0; i < myFriendsIdx; i++) {
+            output.append(myFriends[i].userName).append(" | ").append(myFriends[i].email).append("\n");
+        }
+
+        output.append("--------------------------------------\n");
+
+        return output.toString();
     }
 
     public String getUserName(){
