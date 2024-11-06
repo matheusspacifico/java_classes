@@ -3,7 +3,7 @@ package Class5_2609_2;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract sealed class Employee permits FullTimeEmployee, PerHourEmployee {
+abstract sealed class Employee permits FullTimeEmployee, PerHourEmployee {
     private final String id;
     private final String name;
     private final String jobTitle;
