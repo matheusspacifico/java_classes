@@ -158,7 +158,7 @@ public class UrnaImpl implements Urna {
                         .forEach(candidato -> sb.append(textoFixo(candidato.getNomeUrna(), 30))
                                 .append(textoFixo(cargo.toString(), 20))
                                 .append(textoFixo(String.valueOf(candidato.getNumero()), 10))
-                                .append(partido.getNome()) // Nome do partido
+                                .append(partido.getNome())
                                 .append("\n"));
             }
         });
